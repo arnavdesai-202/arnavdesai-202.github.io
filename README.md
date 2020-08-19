@@ -1,5 +1,7 @@
 # Musical Mood
 
-- This software was tested in microsoft edge, and because of this there may be graphical bugs if run on any other web browser
+- Clone files on laptop from this branch and check if they work! We will merge it with the master branch if everything is okay :) 
 
-[Click here to launch the website.](https://arnavdesai-202.github.io/)
+Arnav - do try changing the name of our website to something else in settings - it is possible to name it other than arnavdesai-202-github.io
+
+
