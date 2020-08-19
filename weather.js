@@ -26,7 +26,11 @@ let a,b,c;
 // }
     
 function gotoTemp(city){
-    
+    if(data[city] === undefined){
+        location.href = "404.html"
+        return;
+    }
+
     getPlaylist(data[city]);
 }
 
@@ -87,7 +91,7 @@ function storeVars(){
     h2.innerHTML = localStorage.getItem("msg");
     mood.src = localStorage.getItem("spotify");
     backgroundImg.style.backgroundImage = "url('" + localStorage.getItem("img") + "')";
-    backgroundImg.appendChild(mood)
+    document.getElementById('iframeLoc').appendChild(mood);
 }
 
 function goBack(){
