@@ -1,5 +1,5 @@
 # Musical Mood
 
-- This software was tested in microsoft edge, and because of this there may be graphical bugs if run on any other web browser
+- Guys, clone this branch on your laptop and let me know if it is working for you. The formatting is all over the place, but i'm taking a look at it.
 
-[Click here to launch the website.](https://arnavdesai-202.github.io/)
+
