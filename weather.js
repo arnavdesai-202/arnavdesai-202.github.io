@@ -77,7 +77,6 @@ function getPlaylist(temperature)
     localStorage.setItem("msg", a);
     localStorage.setItem("spotify", b);
     localStorage.setItem("img", c);
-    console.log(localStorage.getItem("msg"));
     window.location.href = "playlistScreen.html";
 }
 
@@ -86,8 +85,6 @@ function storeVars(){
     let mood = document.createElement('iframe');
     mood.id = 'mood';
     let backgroundImg = document.getElementsByTagName('body')[0];
-    // console.log(localStorage.getItem("msg"));
-    // console.log(localStorage.getItem("spotify"));
     h2.innerHTML = localStorage.getItem("msg");
     mood.src = localStorage.getItem("spotify");
     backgroundImg.style.backgroundImage = "url('" + localStorage.getItem("img") + "')";
