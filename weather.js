@@ -15,42 +15,29 @@ var data = {
     "London" : "sunny",
     "Miami" : "sunny"
 }
+
+//it is a lot more easier to manipulate these objects - do not need to loop then.
 let a,b,c;
 
-// function findCity(city){
-//     for(var i = 0; i < cities.length; i++){
-//         if(cities[i] == city){
-//             return temp[i];
-//         }
-//     }
-// }
-    
 function gotoTemp(city){
     if(data[city] === undefined){
+        //error messsage
         location.href = "404.html"
         return;
     }
-
     getPlaylist(data[city]);
 }
 
 
 function getPlaylist(temperature)
 {
-    
     if(temperature == 'rainy'){
-        // h2.innerHTML = "You've got a rainy day ahead of you! Here's the perfect list:";
-        // backgroundImg.style.background = url('https://thefalconpress.org/wp-content/uploads/2019/01/Rain-900x691.jpg');
-        // mood.src= "https://open.spotify.com/embed/playlist/2sh2q33eQ6onZwRUuhfwrv";
         a = "You've got a rainy day ahead of you! Here's the perfect list:";
         c = 'https://thefalconpress.org/wp-content/uploads/2019/01/Rain-900x691.jpg';
         b = "https://open.spotify.com/embed/playlist/2sh2q33eQ6onZwRUuhfwrv";
     }
 
     else if(temperature == 'sunny'){
-        // h2.innerHTML = "You've got a sunny day ahead of you! Here's the perfect list:";
-        // mood.src="https://open.spotify.com/embed/playlist/7vBShQfXqgKHshNTD9JnWQ";
-        // backgroundImg.style.background = url('https://c7.uihere.com/files/406/1005/182/sunbeam-plant-lichtspiel-sunny-thumb.jpg');
         a = "You've got a sunny day ahead of you! Here's the perfect list:";
         b = "https://open.spotify.com/embed/playlist/7vBShQfXqgKHshNTD9JnWQ";
         c = 'https://c7.uihere.com/files/406/1005/182/sunbeam-plant-lichtspiel-sunny-thumb.jpg';
@@ -74,6 +61,8 @@ function getPlaylist(temperature)
         c = 'http://www.philipbrewer.net/wpx/wp-content/uploads/2013/12/IMG_3244.jpg';
         b = "https://open.spotify.com/embed/playlist/37i9dQZF1DX0Yxoavh5qJV";
     }
+    // local storage allows you to preserve values when you move from one HTML page to another - that was my biggest problem here
+    
     localStorage.setItem("msg", a);
     localStorage.setItem("spotify", b);
     localStorage.setItem("img", c);
@@ -81,6 +70,7 @@ function getPlaylist(temperature)
 }
 
 function storeVars(){
+    //this function is execute once playlistScreen.html is completely loaded - check body tag of this file.
     let h2 = document.getElementById('headerMessage');
     let mood = document.createElement('iframe');
     mood.id = 'mood';
@@ -88,6 +78,7 @@ function storeVars(){
     h2.innerHTML = localStorage.getItem("msg");
     mood.src = localStorage.getItem("spotify");
     backgroundImg.style.backgroundImage = "url('" + localStorage.getItem("img") + "')";
+    //appending iframe to div created in the playlistScreen.html file
     document.getElementById('iframeLoc').appendChild(mood);
 }
 
