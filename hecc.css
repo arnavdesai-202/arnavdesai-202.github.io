@@ -36,6 +36,13 @@ button:hover{
 	padding: 50px 20px;
 	font-size: 1.25em;
 	color: grey;
+	border: 2px solid rgb(73, 88, 103);
+	background: none;
+}
+
+#fields:focus{
+	background-color: rgba(240, 93, 94, 0.2);
+	color: rgb(221, 242, 235);
 }
 
 a{

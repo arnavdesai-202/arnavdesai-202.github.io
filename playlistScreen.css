@@ -45,10 +45,7 @@ a{
 }
 
 a:hover{
-    border-radius: 100%;
-    /* border-top-right-radius: 50%;
-    border-bottom-left-radius: 50%; */
-    
+    border-radius: 80%;
 }
 
 #mood{
