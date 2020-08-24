@@ -56,10 +56,10 @@ a:hover{
     height: 30vw;
     border: 4px solid black;
     border-radius: 10%;
-    display: inline;
 }
 
 #iframeLoc{
+    margin-top: 5vw;
     text-align: center;
     margin-left: 35vw;
 }

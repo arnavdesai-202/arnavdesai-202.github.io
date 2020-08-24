@@ -1,3 +1,8 @@
+/**
+ * Stored our data as a JavaScript object for now - 
+ * easier to traverse - eliminates need for a loop
+ * eg: data["Istanbul"] = "rainy"
+ */
 var data = {
     "Dubai" : "sunny",
     "Manchester" : "rainy",
@@ -15,13 +20,17 @@ var data = {
     "London" : "sunny",
     "Miami" : "sunny"
 }
-
-//it is a lot more easier to manipulate these objects - do not need to loop then.
 let a,b,c;
+/**
+ * 
+ * @var a - Header text
+ * @var b - img link for background
+ * @var c - spotify link
+ */
 
+  
 function gotoTemp(city){
     if(data[city] === undefined){
-        //error messsage
         location.href = "404.html"
         return;
     }
@@ -30,7 +39,7 @@ function gotoTemp(city){
 
 
 function getPlaylist(temperature)
-{
+{ 
     if(temperature == 'rainy'){
         a = "You've got a rainy day ahead of you! Here's the perfect list:";
         c = 'https://thefalconpress.org/wp-content/uploads/2019/01/Rain-900x691.jpg';
@@ -61,24 +70,31 @@ function getPlaylist(temperature)
         c = 'http://www.philipbrewer.net/wpx/wp-content/uploads/2013/12/IMG_3244.jpg';
         b = "https://open.spotify.com/embed/playlist/37i9dQZF1DX0Yxoavh5qJV";
     }
-    // local storage allows you to preserve values when you move from one HTML page to another - that was my biggest problem here
-    
+    /**
+     * localStorage helps preserve data across HTML pages - 
+     * I faceed an error where null was being displayed cause 
+     * a, b and c were getting erased when loading a new page
+     */
     localStorage.setItem("msg", a);
     localStorage.setItem("spotify", b);
     localStorage.setItem("img", c);
     window.location.href = "playlistScreen.html";
+    /**
+     * In the playlistScreen.html file - I've called the below function when the 
+     * body fully loads - this eliminated the error of not finding the below elements
+     * because the page had not fully loaded
+     */
 }
 
 function storeVars(){
-    //this function is execute once playlistScreen.html is completely loaded - check body tag of this file.
+    let backgroundImg = document.getElementsByTagName('body')[0];
     let h2 = document.getElementById('headerMessage');
     let mood = document.createElement('iframe');
-    mood.id = 'mood';
-    let backgroundImg = document.getElementsByTagName('body')[0];
+
+    mood.id = 'mood'; // for styling
     h2.innerHTML = localStorage.getItem("msg");
     mood.src = localStorage.getItem("spotify");
     backgroundImg.style.backgroundImage = "url('" + localStorage.getItem("img") + "')";
-    //appending iframe to div created in the playlistScreen.html file
     document.getElementById('iframeLoc').appendChild(mood);
 }
 
