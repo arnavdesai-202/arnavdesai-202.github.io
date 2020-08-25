@@ -2,15 +2,28 @@
 
 <head>
     <link rel = "stylesheet" type = "text/css" href = "hecc.css">
+</head>
+<body> 
     <h1>ENTER YOUR LOCATION</h1>
-     <form>
-        <input id = "fields" type = "text" name = "UserName"><br>
-        
+     <form autocomplete="off" id = "formElem">
+        <input id = "fields" type = "text" placeholder="Enter your city name">
     </form>
     <button onclick = "gotoTemp(document.getElementById('fields').value)">Find your playlist</button>
-     
-</head>
-<body>
+    <a href = "https://github.com/arnavdesai-202/arnavdesai-202.github.io/" target = "_blank">Made by Arnav, Sargam and Aparna! Check out our project on <img src = "assets/img/github.svg">
+    </a>
+    <script> 
+    //This allows the enter key to take us to the next page
+        let enterKey = document.getElementById('fields');
+        enterKey.addEventListener("keypress", (e)=>{
+            if(e.keyCode == 13){
+                //default unicode for the enter key 
+                e.preventDefault();
+                //by default, pressing enter submits a form. We want to prevent that,
+                //hence this line
+                gotoTemp(enterKey.value);
+           } 
+        });
+    </script>
     <script src = "weather.js"></script>
-    <p>Made by Arnav, Sargam and Aparna!</p>
+    
 </body>

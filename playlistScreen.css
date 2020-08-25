@@ -1,0 +1,71 @@
+
+body{ 
+	width: 560px; 
+    height: 400px; 
+	background-position: 0px 0px;
+    background-size: cover;
+    background-color: #96E6B3;
+}
+
+button{
+    background-color: rgba(255, 255, 255, 0.103);
+    outline: none;
+    border: none;
+    font-style: bold;
+    padding: 10px 30px;
+    position: fixed;
+    margin-left: 40vw;
+}
+
+button:hover{
+    color: white;
+    background-color: rgba(50,50,50,0.5);
+}
+
+h2{
+    font-family: 'Roboto Mono', monospace;
+    color: darkblue;
+    width: 90vw;
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+a{
+    position: fixed;
+    bottom: 0px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 2em;
+    text-align: center;
+    background-color: rgba(255,255,255,0.3);
+    width: 100%;
+    transition: border-radius 0.8s;
+    padding: 5px 0;
+    text-decoration: none;
+}
+
+a:hover{
+    border-radius: 80%;
+}
+
+#mood{
+    width: 30vw;
+    height: 30vw;
+    border: 4px solid black;
+    border-radius: 10%;
+}
+
+#iframeLoc{
+    margin-top: 5vw;
+    text-align: center;
+    margin-left: 35vw;
+}
+
+#error{
+    text-align: center;
+    background-color: #E5446D;
+    transform: translate(30vw, 10vh);
+    font-size: 4em;
+    font-family: 'Roboto Mono', monospace;
+}
+
